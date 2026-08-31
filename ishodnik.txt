@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=aebe7f87-f242-4cba-bd5c-34b077df11ed
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=aebe7f87-f242-4cba-bd5c-34b077df11ed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НЕмарафон · Юлия Шамко</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#F7F4F0;color:#2C2C2C}
+.hero{background:#1C1C1E;color:white;display:flex;align-items:stretch;min-height:220px}
+.hero-img{width:150px;flex-shrink:0;overflow:hidden;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:brightness(.88)}
+.hero-text{flex:1;padding:24px 20px}
+.he{font-size:9px;letter-spacing:3px;color:#C9714A;font-weight:700;margin-bottom:10px}
+.ht{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;line-height:1.2;margin-bottom:12px}
+.ha{font-size:12px;color:#888;line-height:1.5}
+.pb{background:#1C1C1E;padding:0 16px 14px}
+.pt{display:flex;justify-content:space-between;font-size:11px;color:#666;margin-bottom:5px}
+.ptr{height:3px;background:#333;border-radius:2px}
+.ptf{height:100%;background:#7A9E7E;border-radius:2px;transition:width .3s;width:0%}
+.wn{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;background:white;border-bottom:1px solid #EEE}
+.wt{padding:6px 12px;border-radius:100px;border:2px solid #EEE;background:white;color:#888;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap}
+.wt.act{border-color:#7A9E7E;background:#7A9E7E;color:white}
+.ws{display:none}.ws.act{display:block}
+.wh{padding:14px 12px 6px;display:flex;align-items:center;gap:10px}
+.wb{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:white}
+.w1 .wb{background:#7A9E7E}.w2 .wb{background:#C9714A}.w3 .wb{background:#6B8CAE}
+.wti{font-size:15px;font-weight:600}.wsu{font-size:12px;color:#888}
+.main{padding:0 10px 20px}
+.dc{background:white;border-radius:12px;margin-bottom:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dc.all-done{box-shadow:0 0 0 2px #7A9E7E44}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;cursor:pointer;user-select:none}
+.dl{display:flex;align-items:center;gap:8px}
+.dn{font-size:11px;color:#BBB;font-weight:600}
+.dname{font-size:15px;font-weight:600}
+.darr{color:#BBB;font-size:16px;transition:transform .25s;display:inline-block}
+.dc.open .darr{transform:rotate(180deg)}
+.db{display:none}.dc.open .db{display:block}
+.meal{border-top:1px solid #F5F0EB;display:grid}
+.meal.has-img{grid-template-columns:100px 1fr}
+.meal.no-img{grid-template-columns:1fr}
+.mi{width:100%;height:100px;object-fit:cover;display:block}
+.mc{padding:11px 13px}
+.mt{font-size:9px;font-weight:700;letter-spacing:2px;margin-bottom:3px}
+.mn{font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;transition:all .2s}
+.meal.ck .mn{text-decoration:line-through;opacity:.35}
+.ms{list-style:none;margin-bottom:8px}
+.ms li{font-size:12px;color:#666;line-height:1.5;margin-bottom:2px;padding-left:10px;position:relative}
+.ms li::before{content:'·';position:absolute;left:0;color:#CCC}
+.meal.ck .ms{opacity:.25}
+.pls{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
+.pl{display:inline-flex;align-items:center;padding:3px 9px;background:#F5F0EB;border:1px solid #E8E2DC;border-radius:100px;font-size:11px;color:#444;text-decoration:none;font-weight:500}
+.cb{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:100px;border:2px solid #E8E2DC;background:white;font-size:12px;font-weight:600;color:#999;cursor:pointer;font-family:inherit;transition:all .2s}
+.cc{width:15px;height:15px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;transition:all .2s}
+.meal.ck .cb{border-color:#7A9E7E;background:#7A9E7E;color:white}
+.meal.ck .cc{background:white;border-color:white;color:#7A9E7E}
+.done-banner{display:none;padding:9px 14px;background:#EDF6EE;font-size:13px;font-weight:600;color:#7A9E7E;border-top:1px solid #EEE}
+.dc.all-done .done-banner{display:block}
+.dc.all-done .dh{opacity:.65}
+.extra-block{margin:10px 13px;padding:11px;background:#FFF8EC;border-radius:8px;border-left:3px solid #E8A735}
+.extra-title{font-size:13px;font-weight:600;color:#C9714A;margin-bottom:5px}
+.extra-text{font-size:12px;color:#666;line-height:1.6}
+#celebration{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.8);align-items:center;justify-content:center}
+#celebration.show{display:flex}
+.cbox{background:white;border-radius:20px;padding:32px 24px;text-align:center;max-width:300px;width:90%;animation:pop .4s cubic-bezier(.175,.885,.32,1.275)}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.cemoji{font-size:52px;display:block;margin-bottom:12px;animation:bounce 1s infinite alternate}
+@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.ctitle{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;margin-bottom:8px}
+.ctext{font-size:13px;color:#888;line-height:1.6;margin-bottom:14px}
+.cauth{font-size:11px;color:#C9714A;font-weight:600;letter-spacing:1px;margin-bottom:18px}
+.cbtn{padding:10px 26px;background:#2C2C2C;color:white;border:none;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+footer{text-align:center;padding:20px;color:#BBB;font-size:11px}
+.w4 .wb{background:#6B8CAE}
+.vit-tab.act{border-color:#6B8CAE!important;background:#6B8CAE!important;color:white!important}
+.w5 .wb{background:#C9714A}
+.rules-tab.act{border-color:#C9714A!important;background:#C9714A!important;color:white!important}
+.vit-card{background:white;border-radius:12px;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.vit-header{padding:16px 16px 0;display:flex;align-items:center;gap:10px}
+.vit-num{display:inline-block;width:26px;height:26px;border-radius:50%;background:#6B8CAE;color:white;font-size:12px;font-weight:700;text-align:center;line-height:26px;flex-shrink:0}
+.vit-name{font-size:16px;font-weight:700;color:#2C2C2C;line-height:1.3}
+.vit-dose{font-size:12px;color:#C9714A;font-weight:600;margin-bottom:10px}
+.vit-body{padding:0 16px 14px}
+.vit-text{font-size:13px;color:#666;line-height:1.6;margin-bottom:12px}
+.vit-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#6B8CAE;color:white;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none}
+.vit-btn:hover{background:#5a7a9e}
+.vit-btn svg{width:14px;height:14px}
+.vit-banner{background:#EEF3F8;border-radius:10px;padding:12px 14px;margin:0 16px 14px;font-size:12px;color:#555;line-height:1.5;border-left:3px solid #6B8CAE}
+.vit-banner strong{color:#2C2C2C;display:block;margin-bottom:4px}
+.vit-img{width:100%;height:150px;display:flex;align-items:center;justify-content:center;background:#F5F0EB}
+.vit-img img{max-height:126px;max-width:55%;object-fit:contain}
+.rules-banner{background:#FBF1E7;border-radius:10px;padding:14px 16px;margin:0 16px 14px;border-left:3px solid #C9714A}
+.rules-banner strong{display:block;color:#2C2C2C;margin-bottom:4px;font-size:14px}
+.rules-banner p{font-size:12px;color:#666;line-height:1.55;margin:0}
+.rule-block{background:white;border:1px solid #EEE6DC;border-radius:14px;padding:14px 16px 15px;margin-bottom:12px}
+.rule-head{display:flex;align-items:center;margin-bottom:9px}
+.rule-icon{width:42px;height:42px;border-radius:50%;background:#F9F6F2;border:2px solid #E8E2DC;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;position:relative;z-index:2}
+.rule-badge{color:white;font-weight:700;font-size:13px;line-height:1.3;padding:9px 14px 9px 22px;border-radius:8px;margin-left:-16px;flex:1}
+.rule-desc{font-size:12.5px;color:#666;line-height:1.6;padding-left:2px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-img">
+    <img src="yulia.jpeg" alt="Юлия Шамко">
+  </div>
+  <div class="hero-text">
+    <div class="he">НЕМАРАФОН</div>
+    <div class="ht">«Ешь.<br>Худей.<br>Люби.»</div>
+    <div class="ha">Юлия Шамко · нутрициолог<br>@shamkoyulya</div>
+  </div>
+</div>
+
+<div class="pb">
+  <div class="pt"><span>Прогресс</span><span id="pl">0 из 60 приёмов пищи</span></div>
+  <div class="ptr"><div class="ptf" id="pf"></div></div>
+</div>
+
+<div class="wn">
+  <button class="wt rules-tab act" data-w="5" onclick="sw(5)">📋 Правила</button>
+  <button class="wt" data-w="1" onclick="sw(1)">Неделя 1</button>
+  <button class="wt" data-w="2" onclick="sw(2)">Неделя 2</button>
+  <button class="wt" data-w="3" onclick="sw(3)">Неделя 3</button>
+  <button class="wt vit-tab" data-w="4" onclick="sw(4)">💊 Витамины</button>
+</div>
+
+<!-- WEEK 1 -->
+<div class="ws w1" id="w1"><div class="main">
+<div class="wh"><div class="wb">1</div><div><div class="wti">Первая неделя</div><div class="wsu">Дни 1–7</div></div></div>
+
+<div class="dc" id="day-1"><div class="dh" onclick="tog(1)"><div class="dl"><span class="dn">01</span><span class="dname">День 1</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d1-breakfast-egg-roll.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Яичный ролл с зеленью и сыром</div><ul class="ms"><li>Взбейте 2 яйца с молоком и щепоткой соли</li><li>Вылейте на сковороду, посыпьте зеленью и 30 г тёртого сыра</li><li>Сверните в рулет, 1 минуту под крышкой. Подавайте со свежим огурцом</li></ul><button class="cb" onclick="toggleMeal(this,1,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d1-lunch-chicken-bulgur.jpg"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Куриное бедро в соево-горчичной глазури с булгуром</div><ul class="ms"><li>Смажьте бедро соевым соусом, горчицей и чесноком</li><li>Запекайте при 180°C 25–30 минут</li><li>Булгур 1:2 водой, 15 минут. Подавайте с капустным салатом</li></ul><div class="pls"><a href="https://ozon.ru/t/GchHqr3" class="pl" target="_blank">+ Соевый соус</a></div><button class="cb" onclick="toggleMeal(this,1,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d1-dinner-fish-foil.jpg"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Минтай на овощной подушке</div><ul class="ms"><li>Нарежьте кабачок, морковь и перец соломкой, выложите на фольгу</li><li>Сверху минтай, соевый соус и кунжут</li><li>Заверните, запекайте 20 мин при 190°C</li></ul><button class="cb" onclick="toggleMeal(this,1,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-2"><div class="dh" onclick="tog(2)"><div class="dl"><span class="dn">02</span><span class="dname">День 2</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Овсяноблин с паштетом из тунца</div><ul class="ms"><li>3 ст. л. хлопьев + 1 яйцо + вода — обжарьте с двух сторон</li><li>Тунец + творожный сыр + зелень — разомните</li><li>Выложите на половину блинчика листья салата, помидор, огурец — сложите пополам</li></ul><button class="cb" onclick="toggleMeal(this,2,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d2-lunch-turkey-cutlets.jpg"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Рубленые котлеты из индейки с кабачком и гречкой</div><ul class="ms"><li>Нарежьте индейку кубиками, натрите кабачок и отожмите</li><li>Смешайте с яйцом, солью и специями, обжаривайте под крышкой 5–7 мин</li><li>Подавайте с гречкой и овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,2,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d2-dinner-liver-apple-salad.jpg"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Тёплый салат с куриной печенью и яблоком</div><ul class="ms"><li>Обжарьте печень с луком 7–10 минут, посолите</li><li>Яблоко дольками припустите на сухой сковороде 2 минуты</li><li>Выложите на листья салата, сбрызните лимонным соком</li></ul><button class="cb" onclick="toggleMeal(this,2,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-3"><div class="dh" onclick="tog(3)"><div class="dl"><span class="dn">03</span><span class="dname">День 3</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d3-breakfast-shakshuka.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Шакшука</div><ul class="ms"><li>Обжарьте лук и перец, добавьте томаты и специи, тушите 5 минут</li><li>Сделайте 2 углубления, разбейте яйца, готовьте под крышкой</li><li>Посыпьте кинзой, подавайте с тостом</li></ul><button class="cb" onclick="toggleMeal(this,3,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Буррито в лаваше</div><ul class="ms"><li>Куриное филе разберите на волокна, смешайте с фасолью, кукурузой и капустой</li><li>Заправьте йогуртом, солью и чесноком</li><li>Заверните в лаваш, подсушите на гриль-сковороде</li></ul><button class="cb" onclick="toggleMeal(this,3,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Горбуша под сырно-сметанной шапкой</div><ul class="ms"><li>Нарежьте горбушу, выложите в форму, сверху лук и помидор</li><li>Смажьте смесью сметаны, укропа и тёртого сыра</li><li>Запекайте при 180°C 25 минут. Подавайте с салатом из редиски и огурцов</li></ul><button class="cb" onclick="toggleMeal(this,3,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-4"><div class="dh" onclick="tog(4)"><div class="dl"><span class="dn">04</span><span class="dname">День 4</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d4-breakfast-oatmeal-tomato.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Овсянка с томатами</div><ul class="ms"><li>Обжарьте помидоры с чесноком, добавьте 3 ст. л. овсянки и воду</li><li>Готовьте под крышкой, натрите сыр, добавьте яйцо</li><li>Подавайте с тостом и огурцами слайсами</li></ul><button class="cb" onclick="toggleMeal(this,4,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Пряный суп-пюре из чечевицы + салат табуле</div><ul class="ms"><li>Припустите лук и морковь, добавьте чечевицу и бульон, варите 15–20 минут</li><li>Добавьте паприку и куркуму, пробейте блендером. Подавайте с сухариками</li><li>Табуле: булгур + помидоры + петрушка + зелёный лук + масло + лимон</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/61073258/detail.aspx" class="pl" target="_blank">+ Топлёное масло</a></div><button class="cb" onclick="toggleMeal(this,4,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Кальмары в сметанно-чесночном соусе</div><ul class="ms"><li>Кольца кальмаров обжарьте с луком 2 минуты</li><li>Добавьте сметану, чеснок, укроп, тушите ровно 1 минуту</li><li>Подавайте с хрустящим салатом из молодой капусты</li></ul><button class="cb" onclick="toggleMeal(this,4,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-5"><div class="dh" onclick="tog(5)"><div class="dl"><span class="dn">05</span><span class="dname">День 5</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Ленивая овсянка в банке</div><ul class="ms"><li>С вечера: хлопья + семена чиа залейте кефиром, уберите в холодильник</li><li>Утром добавьте клубнику и банан кубиками</li><li>Подайте с тостом со сливочным маслом и сыром или паштетом из печени трески</li></ul><button class="cb" onclick="toggleMeal(this,5,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Плов из булгура с индейкой</div><ul class="ms"><li>Обжарьте лук и морковь, добавьте индейку, булгур и специи</li><li>Залейте водой, готовьте под крышкой</li><li>Подавайте с салатом из отварной свёклы с чесноком и йогуртом</li></ul><button class="cb" onclick="toggleMeal(this,5,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Куриные оладьи с брокколи</div><ul class="ms"><li>Мелко нарубите филе, добавьте зелень, яйцо, муку, соль</li><li>Обжаривайте оладьи под крышкой</li><li>Брокколи сбрызните маслом, посолите, запеките 15 мин при 200°C</li></ul><button class="cb" onclick="toggleMeal(this,5,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-6"><div class="dh" onclick="tog(6)"><div class="dl"><span class="dn">06</span><span class="dname">День 6</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Скрамбл на тосте с красной рыбой</div><ul class="ms"><li>2 яйца на холодную сковороду с топлёным маслом — постоянно помешивайте, снимите раньше</li><li>Подсушите тост</li><li>Выложите скрамбл, сверху горбуша и слайсы огурца</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/61073258/detail.aspx" class="pl" target="_blank">+ Топлёное масло</a></div><button class="cb" onclick="toggleMeal(this,6,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Картофель в мундире с минтаем в томате</div><ul class="ms"><li>Запеките картофель целиком в фольге</li><li>Обжарьте лук и морковь, добавьте томатную пасту и воду</li><li>Выложите минтай, добавьте лавровый лист, тушите 15 минут</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/90952865/detail.aspx" class="pl" target="_blank">+ Томаты пассата</a></div><button class="cb" onclick="toggleMeal(this,6,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Салат с нутом и пекинской капустой</div><ul class="ms"><li>Нашинкуйте капусту, нарежьте огурец и варёное яйцо</li><li>Добавьте консервированный нут</li><li>Заправьте лимонным соком, оливковым маслом и солью</li></ul><button class="cb" onclick="toggleMeal(this,6,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-7"><div class="dh" onclick="tog(7)"><div class="dl"><span class="dn">07</span><span class="dname">День 7</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d7-lunch-fish-cakes.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Драники из кабачка и картофеля с яйцом пашот</div><ul class="ms"><li>Натрите кабачок и картофель, отожмите, добавьте яйцо, муку, соль</li><li>Обжарьте оладьи с двух сторон</li><li>Яйцо пашот: вода с уксусом, воронка, 3 минуты. Выложите на драники</li></ul><button class="cb" onclick="toggleMeal(this,7,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d7-dinner-chicken-rice.jpg"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Рыбные котлеты с бурым рисом</div><ul class="ms"><li>Измельчите минтай с луком в блендере</li><li>Добавьте соль и специи, готовьте на пару или запеките</li><li>Бурый рис варите 30–40 минут. Подавайте с овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,7,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d7-dinner-chicken-salad.jpg"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Куриные голени с фасолью в томате</div><ul class="ms"><li>Натрите голени солью и паприкой, запеките 35 мин при 180°C</li><li>Прогрейте фасоль в томатном соусе с зеленью и чесноком</li><li>Подавайте с овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,7,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+</div></div>
+
+<!-- WEEK 2 -->
+<div class="ws w2" id="w2"><div class="main">
+<div class="wh"><div class="wb">2</div><div><div class="wti">Вторая неделя</div><div class="wsu">Дни 8–14</div></div></div>
+
+<div class="dc" id="day-8"><div class="dh" onclick="tog(8)"><div class="dl"><span class="dn">08</span><span class="dname">День 8</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">ПП-сэндвич с курицей</div><ul class="ms"><li>Смешайте йогурт с горчицей, смажьте два ломтика хлеба</li><li>Выложите листья салата, куриное филе и помидор</li><li>Посыпьте тёртым сыром</li></ul><button class="cb" onclick="toggleMeal(this,8,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Ёжики из индейки с тушёной капустой</div><ul class="ms"><li>Фарш индейки с луком и рисом — скатайте шарики</li><li>Залейте томатной пастой с водой, тушите 25 минут</li><li>Отдельно потушите капусту с морковью</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/90952865/detail.aspx" class="pl" target="_blank">+ Томаты пассата</a></div><button class="cb" onclick="toggleMeal(this,8,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Салат с тунцом и стручковой фасолью</div><ul class="ms"><li>Отварите стручковую фасоль 3 минуты, обдайте ледяной водой — я беру заморозку</li><li>Смешайте фасоль, тунца, варёное яйцо и оливки</li><li>Заправьте оливковым маслом и лимонным соком</li></ul><button class="cb" onclick="toggleMeal(this,8,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-9"><div class="dh" onclick="tog(9)"><div class="dl"><span class="dn">09</span><span class="dname">День 9</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Овсяная каша с арахисовой пастой и яблоком</div><ul class="ms"><li>Сварите овсянку с солью и корицей</li><li>В горячую кашу добавьте 1 ч. л. арахисовой пасты без сахара</li><li>Сверху нарезанное яблоко. Подайте с 2 варёными яйцами и огурцом</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/895528632/detail.aspx" class="pl" target="_blank">+ Арахисовая паста</a></div><button class="cb" onclick="toggleMeal(this,9,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d9-lunch-pasta-salad.jpg"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Паста-салат «Птитим» с индейкой</div><ul class="ms"><li>Отварите птитим по инструкции</li><li>Бедро индейки замаринуйте в уксусе 30 мин, нарежьте, обжарьте со специями</li><li>Соберите боул: птитим, индейка, зелень, авокадо, сыр, овощи. Заправьте маслом и бальзамиком</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/178284349/detail.aspx" class="pl" target="_blank">+ Птитим</a><a href="https://www.wildberries.ru/catalog/166553130/detail.aspx" class="pl" target="_blank">+ Уксус</a></div><button class="cb" onclick="toggleMeal(this,9,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d9-dinner-chicken-egg-salad.jpg"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Салат с индейкой и перепелиными яйцами</div><ul class="ms"><li>Нарежьте индейку из обеда</li><li>Добавьте отварные перепелиные яйца, листья салата, зелень, огурцы</li><li>Заправьте йогуртом или маслом</li></ul><button class="cb" onclick="toggleMeal(this,9,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-10"><div class="dh" onclick="tog(10)"><div class="dl"><span class="dn">10</span><span class="dname">День 10</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Белковый завтрак с авокадо</div><ul class="ms"><li>Пожарьте яичницу-глазунью из 2 яиц</li><li>Выложите рядом 100 г зернёного творога</li><li>Добавьте половинку авокадо или сыр и тост</li></ul><button class="cb" onclick="toggleMeal(this,10,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Суп с фрикадельками из индейки + грузинский салат</div><ul class="ms"><li>Из фарша с луком сформируйте фрикадельки, варите 10 минут</li><li>Добавьте картофель, морковь, лук. За 5 минут — вермишель и зелень</li><li>Подайте с грузинским салатом; кому мало — добавьте гречку с топлёным маслом</li></ul><div class="pls"><a href="https://ru.pinterest.com/pin/592716000999876403/" class="pl" target="_blank">+ Рецепт грузинского салата</a></div><button class="cb" onclick="toggleMeal(this,10,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Фаршированный болгарский перец</div><ul class="ms"><li>У перцев срежьте верхушки, удалите семена</li><li>Начините фаршем с луком и морковью (без риса)</li><li>Залейте томатным соком до середины, тушите 40 минут. Подавайте с салатом</li></ul><div class="pls"><a href="https://xn----7sbhfgrdpmlfdj4bcqm7f.xn--p1ai/everyday/tproduct/690362239-854948566341-perets-farshirovannii-indeika" class="pl" target="_blank">+ Купить готовые</a></div><button class="cb" onclick="toggleMeal(this,10,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-11"><div class="dh" onclick="tog(11)"><div class="dl"><span class="dn">11</span><span class="dname">День 11</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d11-breakfast-mushroom-omelet.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Омлет с грибами</div><ul class="ms"><li>Обжарьте грибы на топлёном масле</li><li>Взбейте 2 яйца вилкой, посолите, поперчите, добавьте к грибам</li><li>Подавайте с тостом и помидором</li></ul><button class="cb" onclick="toggleMeal(this,11,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Куриная печень в сливках с ячневой крупой</div><ul class="ms"><li>Обжарьте печень с луком 5 минут</li><li>Влейте 50 мл сливок 10%, тушите ещё 5 минут</li><li>Подавайте с ячневой крупой, огурцами и редисом</li></ul><button class="cb" onclick="toggleMeal(this,11,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Печень с овощами</div><ul class="ms"><li>Подайте оставшуюся печень с овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,11,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-12"><div class="dh" onclick="tog(12)"><div class="dl"><span class="dn">12</span><span class="dname">День 12</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d12-breakfast-liver-pate-toast.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Тост с печёночным паштетом</div><ul class="ms"><li>В форму — печень, морковь, лук, соль, перец, топлёное масло. Фольга, 40–50 мин в духовке</li><li>Пробейте блендером с топлёным маслом и немного воды</li><li>На тост — сливочное масло, паштет, помидор и руккола</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/61073258/detail.aspx" class="pl" target="_blank">+ Топлёное масло</a></div><button class="cb" onclick="toggleMeal(this,12,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Паста Болоньезе</div><ul class="ms"><li>Отварите пасту аль денте</li><li>Обжарьте лук, добавьте фарш индейки, томаты, базилик, чеснок, тушите 15 мин</li><li>Выложите соус на пасту, подавайте с овощным салатом</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/90952865/detail.aspx" class="pl" target="_blank">+ Томаты пассата</a></div><button class="cb" onclick="toggleMeal(this,12,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Тёплый салат из баклажанов с куриным бедром</div><ul class="ms"><li>Запеките бедро, нарежьте кусочками</li><li>Баклажаны нарежьте, посолите, промойте, обжарьте с чесноком</li><li>Смешайте баклажаны, курицу, помидоры и зелень</li></ul><button class="cb" onclick="toggleMeal(this,12,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-13"><div class="dh" onclick="tog(13)"><div class="dl"><span class="dn">13</span><span class="dname">День 13</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d13-breakfast-egg-wrap.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Яичный конвертик</div><ul class="ms"><li>Взбейте 2 яйца, посолите, поперчите, обжарьте на топлёном масле</li><li>На половинку — листья салата, помидоры, сыр, курицу или паштет</li><li>Подавайте с овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,13,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d13-side-pea-salad.jpg"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Греча по-купечески</div><ul class="ms"><li>Нарежьте бедро индейки, обжарьте с луком и морковью</li><li>Всыпьте промытую гречку, добавьте соль и специи</li><li>Залейте водой 1:2, томите под крышкой 20 минут</li></ul><button class="cb" onclick="toggleMeal(this,13,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Гречка по-купечески с овощами</div><ul class="ms"><li>Подайте оставшуюся гречку с овощным салатом из огурца, горошка и зелени</li></ul><button class="cb" onclick="toggleMeal(this,13,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-14"><div class="dh" onclick="tog(14)"><div class="dl"><span class="dn">14</span><span class="dname">День 14</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Пшённая каша с тыквой</div><ul class="ms"><li>Промойте пшено горячей водой, тыкву натрите или нарежьте</li><li>Варите вместе 25 минут. Добавьте 5 г сливочного масла</li><li>Подавайте с отварным яйцом и тостом с маслом и сыром</li></ul><button class="cb" onclick="toggleMeal(this,14,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Скумбрия с кускусом</div><ul class="ms"><li>Скумбрию сбрызните лимоном, посыпьте прованскими травами, заверните в фольгу, запекайте 20 мин</li><li>Кускус залейте кипятком 1:1.5 на 5 минут</li><li>Подавайте с салатом из помидоров и рукколы</li></ul><button class="cb" onclick="toggleMeal(this,14,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Скумбрия с овощным салатом</div><ul class="ms"><li>Подайте оставшуюся скумбрию с овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,14,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="extra-block"><div class="extra-title">🥒 Приготовьте на завтра малосольные огурцы</div><div class="extra-text">Огурцы 700 г · соль 1 ст. л. · сахар 1 ч. л. · укроп 1 пучок · чеснок 6–7 зубчиков · хлопья чили по желанию<br><br>Нарезаем, складываем в контейнер или пакет, перемешиваем и убираем в холодильник минимум на 1 час.<br><em>Быстрые, хрустящие, малосольные огурчики готовы!</em></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+</div></div>
+
+<!-- WEEK 3 -->
+<div class="ws w3" id="w3"><div class="main">
+<div class="wh"><div class="wb">3</div><div><div class="wti">Третья неделя</div><div class="wsu">Дни 15–20</div></div></div>
+
+<div class="dc" id="day-15"><div class="dh" onclick="tog(15)"><div class="dl"><span class="dn">15</span><span class="dname">День 15</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Белковый завтрак</div><ul class="ms"><li>Намажьте на тост паштет, творожный сыр или яйцо</li><li>Подавайте с овощами</li></ul><div class="pls"><a href="https://ru.pinterest.com/pin/820218150932570219/" class="pl" target="_blank">+ Идеи белкового завтрака</a></div><button class="cb" onclick="toggleMeal(this,15,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Котлеты из говядины с перловкой</div><ul class="ms"><li>В фарш добавьте много лука, соль и перец, отбейте. Сформируйте котлеты</li><li>Запекайте при 190°C 30 минут</li><li>Перловку варите 40–50 минут. Подавайте с битыми огурцами</li></ul><button class="cb" onclick="toggleMeal(this,15,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Котлеты с битыми огурцами</div><ul class="ms"><li>Подайте оставшиеся котлеты с малосольными огурцами</li></ul><button class="cb" onclick="toggleMeal(this,15,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-16"><div class="dh" onclick="tog(16)"><div class="dl"><span class="dn">16</span><span class="dname">День 16</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Овсяноблин с творожным сыром и томатами</div><ul class="ms"><li>3 ст. л. хлопьев + 1 яйцо + 3 ст. л. воды + соль — взбить и обжарить</li><li>Смажьте творожным сыром, посыпьте зеленью</li><li>Выложите кружочки помидора, сложите пополам</li></ul><button class="cb" onclick="toggleMeal(this,16,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Голень индейки с рисом</div><ul class="ms"><li>Нашпигуйте чесноком, натрите солью, паприкой, травами. Заверните в фольгу</li><li>Запекайте при 180°C 1–1.5 часа</li><li>Подавайте с рисом и салатом коул-слоу</li></ul><button class="cb" onclick="toggleMeal(this,16,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Минтай в средиземноморском томатном соусе</div><ul class="ms"><li>Припустите чеснок, добавьте томаты и оливки, тушите 3 мин</li><li>Выложите минтай в соус, полейте сверху</li><li>Накройте крышкой, тушите на слабом огне 15 минут</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/90952865/detail.aspx" class="pl" target="_blank">+ Томаты пассата</a></div><button class="cb" onclick="toggleMeal(this,16,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-17"><div class="dh" onclick="tog(17)"><div class="dl"><span class="dn">17</span><span class="dname">День 17</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d17-breakfast-avocado-toast.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Тост с авокадо</div><ul class="ms"><li>Авокадо разомните вилкой, посолите, поперчите</li><li>Намажьте на обжаренный тост</li><li>Подавайте с 2 варёными яйцами и зеленью</li></ul><button class="cb" onclick="toggleMeal(this,17,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d17-lunch-curry-bulgur.jpg"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Курица карри с булгуром</div><ul class="ms"><li>Курицу нарежьте кубиками, замаринуйте с луком, чесноком и маслом. Обжарьте до румяности</li><li>Добавьте нарезанные перец и кабачок, тушите 30 минут</li><li>За 5–10 мин до конца добавьте булгур, соль и карри. При подаче — сметана</li></ul><button class="cb" onclick="toggleMeal(this,17,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d17-dinner-liver-pancakes.jpg"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Печёночные оладьи с гречкой</div><ul class="ms"><li>Печень, лук и чеснок пропустите через мясорубку. Добавьте яйца, манку, разрыхлитель, соль</li><li>Жарьте на топлёном масле под крышкой по 5 мин с каждой стороны</li><li>Подавайте с отварной гречкой и сметаной</li></ul><div class="pls"><a href="https://www.wildberries.ru/catalog/61073258/detail.aspx" class="pl" target="_blank">+ Топлёное масло</a></div><button class="cb" onclick="toggleMeal(this,17,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-18"><div class="dh" onclick="tog(18)"><div class="dl"><span class="dn">18</span><span class="dname">День 18</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Печёночные оладьи с гречкой (из вчерашнего)</div><ul class="ms"><li>Отварите гречку, добавьте топлёное масло</li><li>Нарежьте огурец слайсами, полейте маслом</li><li>Подавайте с вчерашними печёночными оладьями</li></ul><button class="cb" onclick="toggleMeal(this,18,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Стейк из капусты под фаршем</div><ul class="ms"><li>Нарежьте капусту кругами 2 см, выложите на противень, посолите</li><li>Сверху фарш индейки с луком ровным слоем</li><li>Запекайте при 180°C 35 мин, за 5 мин присыпьте тёртым сыром</li></ul><button class="cb" onclick="toggleMeal(this,18,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Стейк из капусты</div><ul class="ms"><li>Подайте оставшийся стейк из капусты</li></ul><button class="cb" onclick="toggleMeal(this,18,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-19"><div class="dh" onclick="tog(19)"><div class="dl"><span class="dn">19</span><span class="dname">День 19</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal has-img"><img class="mi" src="photos/d19-breakfast-avocado-cheese.jpg"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Авокадо, яйцо и сыр на тосте</div><ul class="ms"><li>Нарежьте авокадо тонкими слайсами</li><li>Подавайте с варёными яйцами, ломтиками сыра и тостом</li><li>Добавьте рукколу или микс зелени</li></ul><button class="cb" onclick="toggleMeal(this,19,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal has-img"><img class="mi" src="photos/d19-lunch-funchoza.jpg"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Фунчоза с фаршем</div><ul class="ms"><li>Залейте фунчозу кипятком на 5–6 минут</li><li>Обжарьте грибы и овощи 4 мин, добавьте фарш, жарьте 5–6 мин</li><li>Тушите 10 мин, добавьте фунчозу и соевый соус, посыпьте зеленью</li></ul><div class="pls"><a href="https://ozon.ru/t/GchHqr3" class="pl" target="_blank">+ Соевый соус</a></div><button class="cb" onclick="toggleMeal(this,19,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Фунчоза с овощным салатом</div><ul class="ms"><li>Подайте оставшуюся фунчозу с овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,19,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+<div class="dc" id="day-20"><div class="dh" onclick="tog(20)"><div class="dl"><span class="dn">20</span><span class="dname">День 20 🎉</span></div><span class="darr">▾</span></div><div class="db">
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#E8A735">ЗАВТРАК</div><div class="mn">Овсяная каша на воде с ягодами</div><ul class="ms"><li>Отварите кашу на воде, добавьте топлёное масло и любые ягоды</li><li>Подавайте с тостом с маслом и сыром</li><li>Добавьте варёное яйцо и помидор</li></ul><button class="cb" onclick="toggleMeal(this,20,'breakfast')"><span class="cc"></span><span class="cl">Завтрак съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#7A9E7E">ОБЕД</div><div class="mn">Куриные сердечки в луковой подливе с булгуром</div><ul class="ms"><li>Очистите сердечки, обжарьте с большим количеством лука и моркови</li><li>Добавьте воду, посолите, тушите 35–40 минут</li><li>Подавайте с булгуром и овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,20,'lunch')"><span class="cc"></span><span class="cl">Обед съеден</span></button></div></div>
+<div class="meal no-img"><div class="mc"><div class="mt" style="color:#C9714A">УЖИН</div><div class="mn">Сердечки с овощным салатом</div><ul class="ms"><li>Подайте оставшиеся сердечки с овощным салатом</li></ul><button class="cb" onclick="toggleMeal(this,20,'dinner')"><span class="cc"></span><span class="cl">Ужин съеден</span></button></div></div>
+<div class="done-banner">✓ День завершён — отлично!</div></div></div>
+
+</div></div>
+
+
+<!-- VITAMINS -->
+<div class="ws w4" id="w4"><div class="main">
+<div class="wh"><div class="wb" style="background:#6B8CAE">💊</div><div><div class="wti">Витамины и добавки</div><div class="wsu">Рекомендации Юлии Шамко</div></div></div>
+
+<div class="vit-banner">
+  <strong>Зачем это нужно?</strong>
+  Правильно подобранные витамины — это не просто «для здоровья». Это топливо для энергии, сна и восстановления. Каждый из этих продуктов выбран под конкретную задачу.
+</div>
+
+<div class="vit-card">
+  <div class="vit-header" style="padding-bottom:2px">
+    <div class="vit-num">1</div>
+    <div class="vit-name">Витаминный комплекс «Ритмы здоровья»</div>
+  </div>
+  <div class="vit-img"><img src="photos/vitamins/ritmy.png" alt="Витаминный комплекс «Ритмы здоровья»"></div>
+  <div class="vit-body" style="padding-top:12px">
+    <div class="vit-dose">🌅 Утренняя + вечерняя капсула</div>
+    <div class="vit-text">Комплекс разделён на две формулы. <strong>Утренняя капсула</strong> — высокая концентрация витаминов группы B, витамины A, E, C и растительные бустеры (экстракт элеутерококка и зелёного чая). Мощный пинок АТФ-системе. <strong>Вечерняя капсула</strong> — органические минералы (железо, цинк, селен, хром, марганец) и успокаивающие травы.</div>
+    <a href="https://ru.siberianhealth.com/ru/shop/catalog/product/500048/?referral=2687535825" class="vit-btn" target="_blank"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg>Купить</a>
+  </div>
+</div>
+
+<div class="vit-card">
+  <div class="vit-header" style="padding-bottom:2px">
+    <div class="vit-num">2</div>
+    <div class="vit-name">Витамин D3 MAX</div>
+  </div>
+  <div class="vit-img"><img src="photos/vitamins/d3.png" alt="Витамин D3 MAX"></div>
+  <div class="vit-body" style="padding-top:12px">
+    <div class="vit-dose">☀️ 6 капель во время завтрака</div>
+    <div class="vit-text">Витамин D₃ — строго жирорастворимый элемент. МСТ-масло не требует расщепления ферментами и всасывается напрямую в кровоток, мгновенно доставляя нутриент в ткани. В составе всего два компонента — МСТ-масло и холекальциферол. Максимально гипоаллергенно.</div>
+    <a href="https://ru.siberianhealth.com/ru/shop/catalog/product/501644/?referral=2687535825" class="vit-btn" target="_blank"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg>Купить</a>
+  </div>
+</div>
+
+<div class="vit-card">
+  <div class="vit-header" style="padding-bottom:2px">
+    <div class="vit-num">3</div>
+    <div class="vit-name">Омега-3 Ультра</div>
+  </div>
+  <div class="vit-img"><img src="photos/vitamins/omega3.png" alt="Омега-3 Ультра"></div>
+  <div class="vit-body" style="padding-top:12px">
+    <div class="vit-dose">🐟 2 капсулы во время завтрака</div>
+    <div class="vit-text">Плотные клеточные мембраны блокируют прохождение сигналов. Омега-3 делает мембрану «текучей», облегчая проникновение питательных веществ внутрь митохондрий. Кроме того, полиненасыщенные жирные кислоты гасят скрытое системное воспаление — главный «пожиратель» вашей повседневной энергии.</div>
+    <a href="https://ru.siberianhealth.com/ru/shop/catalog/product/500484/?referral=2687535825" class="vit-btn" target="_blank"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg>Купить</a>
+  </div>
+</div>
+
+<div class="vit-card">
+  <div class="vit-header" style="padding-bottom:2px">
+    <div class="vit-num">4</div>
+    <div class="vit-name">ЭПАМ 1000 (неврологический)</div>
+  </div>
+  <div class="vit-img"><img src="photos/vitamins/epam.png" alt="ЭПАМ 1000"></div>
+  <div class="vit-body" style="padding-top:12px">
+    <div class="vit-dose">🌿 10 капель 2 раза в день во время еды</div>
+    <div class="vit-text">Клеточный концентрат сока пихты, родиола розовая и элеутерококк работают как мягкие модуляторы коры надпочечников. Выравнивают утренний пик кортизола, давая чистое состояние бодрости без тремора рук и тахикардии, которые бывают от избытка кофеина.</div>
+    <a href="https://ru.siberianhealth.com/ru/shop/catalog/product/400264/?referral=2687535825" class="vit-btn" target="_blank"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg>Купить</a>
+  </div>
+</div>
+
+<div class="vit-card">
+  <div class="vit-header" style="padding-bottom:2px">
+    <div class="vit-num">5</div>
+    <div class="vit-name">КЛАДОВИТ Магний хелат глицинат</div>
+  </div>
+  <div class="vit-img"><img src="photos/vitamins/magnesium.png" alt="КЛАДОВИТ Магний хелат глицинат"></div>
+  <div class="vit-body" style="padding-top:12px">
+    <div class="vit-dose">🌙 3 капсулы перед сном</div>
+    <div class="vit-text">Магний не синтезируется организмом и сгорает при малейшем стрессе или чашке кофе. Без него любой энерго-протокол будет работать вхолостую. Хелатная форма глицинат — лучшее усвоение и без эффекта слабительного.</div>
+    <a href="https://www.wildberries.ru/catalog/379816496/detail.aspx?size=552622697" class="vit-btn" target="_blank"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg>Купить</a>
+  </div>
+</div>
+
+</div></div>
+
+<!-- RULES -->
+<div class="ws w5 act" id="w5"><div class="main">
+<div class="wh"><div class="wb" style="background:#C9714A">📋</div><div><div class="wti">Основные правила</div><div class="wsu">7 принципов НЕмарафона</div></div></div>
+
+<div class="rules-banner">
+  <strong>🌟 Прежде чем начать</strong>
+  <p>Это база, на которой держится всё. Соблюдайте эти правила каждый день наравне с меню — тогда система сработает по-настоящему.</p>
+</div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">💧</div><div class="rule-badge" style="background:#6B8CAE">Тёплая вода с утра</div></div><div class="rule-desc">Начинайте день со стакана тёплой воды. Наладить питьевой режим — это основа основ.</div></div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">🍳</div><div class="rule-badge" style="background:#E8A735">Завтрак — белок и жиры</div></div><div class="rule-desc">Такой завтрак даёт долгое насыщение и правильно запускает организм на весь день.</div></div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">🥩</div><div class="rule-badge" style="background:#C9714A">Ужин — белок и клетчатка</div></div><div class="rule-desc">Никаких углеводов вечером. Только белок и овощи.</div></div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">🥦</div><div class="rule-badge" style="background:#7A9E7E">Клетчатка в каждый приём</div></div><div class="rule-desc">Добавляйте овощи к каждому приёму пищи — завтраку, обеду и ужину.</div></div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">🍬</div><div class="rule-badge" style="background:#6B8CAE">Сахар и фрукты — под контролем</div></div><div class="rule-desc">Ограничьте сахар и количество фруктов в рационе.</div></div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">⏰</div><div class="rule-badge" style="background:#E8A735">Углеводы и молочка — до 16:00</div></div><div class="rule-desc">Молочные продукты, фрукты и углеводы оставляйте на первую половину дня.</div></div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">🌙</div><div class="rule-badge" style="background:#C9714A">Отбой до 23:00</div></div><div class="rule-desc">Ложитесь спать до 23:00 — сон это часть протокола восстановления.</div></div>
+
+<div class="rule-block"><div class="rule-head"><div class="rule-icon">🏃</div><div class="rule-badge" style="background:#7A9E7E">Двигайтесь каждый день</div></div><div class="rule-desc">Зарядка, тренировка или просто больше шагов. Активность — не бонус, а часть протокола.</div></div>
+
+</div></div>
+<footer>НЕмарафон «Ешь. Худей. Люби.» · @shamkoyulya</footer>
+
+<div id="celebration"><div class="cbox"><span class="cemoji">🎉</span><div class="ctitle">Вы сделали это!</div><div class="ctext">20 дней позади. Вы заботились о себе и доказали — здоровое питание это не марафон, а образ жизни.</div><div class="cauth">— Юлия Шамко · @shamkoyulya</div><button class="cbtn" onclick="document.getElementById('celebration').classList.remove('show')">Спасибо! 🌿</button></div></div>
+
+<script>
+const SK='shamko_v3';
+function sw(n){
+  document.querySelectorAll('.ws').forEach(s=>s.classList.remove('act'));
+  document.querySelectorAll('.wt').forEach(t=>t.classList.remove('act'));
+  document.getElementById('w'+n).classList.add('act');
+  document.querySelector('.wt[data-w="'+n+'"]').classList.add('act');
+}
+function tog(id){
+  const c=document.getElementById('day-'+id);
+  c.classList.toggle('open');
+}
+function toggleMeal(btn,day,type){
+  const meal=btn.closest('.meal');
+  meal.classList.toggle('ck');
+  const ck=meal.classList.contains('ck');
+  btn.querySelector('.cc').textContent=ck?'✓':'';
+  const card=meal.closest('.dc');
+  const meals=card.querySelectorAll('.meal');
+  const cked=card.querySelectorAll('.meal.ck');
+  if(meals.length>0&&meals.length===cked.length){
+    card.classList.add('all-done');
+    if(day===20&&type==='dinner')setTimeout(()=>document.getElementById('celebration').classList.add('show'),400);
+  }else{card.classList.remove('all-done');}
+  save();upd();
+}
+function save(){
+  const keys=[];
+  document.querySelectorAll('.meal.ck').forEach(m=>{
+    const day=m.closest('.dc').id;
+    const type=m.classList.contains('breakfast')?'b':m.classList.contains('lunch')?'l':'d';
+    keys.push(day+':'+type);
+  });
+  localStorage.setItem(SK,JSON.stringify(keys));
+}
+function load(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(SK)||'[]');
+    saved.forEach(k=>{
+      const[dayId,type]=k.split(':');
+      const card=document.getElementById(dayId);
+      if(!card)return;
+      const cls=type==='b'?'breakfast':type==='l'?'lunch':'dinner';
+      const meal=card.querySelector('.meal.'+cls);
+      if(!meal)return;
+      meal.classList.add('ck');
+      meal.querySelector('.cc').textContent='✓';
+    });
+    document.querySelectorAll('.dc').forEach(c=>{
+      if(c.querySelectorAll('.meal').length===c.querySelectorAll('.meal.ck').length&&c.querySelectorAll('.meal').length>0)c.classList.add('all-done');
+    });
+    upd();
+  }catch(e){}
+}
+function upd(){
+  const done=document.querySelectorAll('.meal.ck').length;
+  const pct=Math.round(done/60*100);
+  document.getElementById('pf').style.width=pct+'%';
+  document.getElementById('pl').textContent=done+' из 60 приёмов пищи';
+}
+document.addEventListener('DOMContentLoaded',()=>{load();document.getElementById('day-1').classList.add('open');});
+</script>
+</body>
+</html>
