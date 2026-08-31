@@ -1,112 +1,28 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Сбалансированный план питания на каждый день" />
-    <title>Мой план питания</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="header">
-        <a class="brand" href="#" aria-label="На главную">
-          <span class="brand__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M7 20c4.7-.2 8-2.8 9.7-7.8-4.2-.3-7.5 1-9.2 4.2m.2 3.6C5.9 16.8 6.5 12.6 9.3 9c2.7-3.4 6.1-4.8 9.9-4.9.3 4.5-.6 8.3-2.8 11.2C14.2 18.2 11.3 19.8 7.7 20Z"/></svg>
-          </span>
-          <span>Мой план</span>
-        </a>
-        <div class="header__actions">
-          <button class="icon-button" type="button" aria-label="Уведомления">
-            <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
-          </button>
-          <button class="profile" type="button" aria-label="Открыть профиль">А</button>
-        </div>
-      </header>
-
-      <main>
-        <section class="welcome">
-          <div>
-            <p class="eyebrow">ТВОЙ ЛИЧНЫЙ РАЦИОН</p>
-            <h1>Доброе утро, Анна! <span aria-hidden="true">👋</span></h1>
-            <p class="welcome__text">Продолжай двигаться к цели — сегодня тебя ждёт вкусный и полезный день.</p>
-          </div>
-          <div class="progress-card">
-            <div class="progress-ring" role="img" aria-label="Выполнено 75 процентов">
-              <strong id="progress-value">75%</strong>
-            </div>
-            <div><b>Отличный темп!</b><span>3 из 4 приёмов пищи</span></div>
-          </div>
-        </section>
-
-        <nav class="days" aria-label="Выбор дня недели">
-          <button class="day" type="button" data-day="Пн"><span>Пн</span><b>19</b></button>
-          <button class="day" type="button" data-day="Вт"><span>Вт</span><b>20</b></button>
-          <button class="day day--active" type="button" data-day="Ср"><span>Ср</span><b>21</b></button>
-          <button class="day" type="button" data-day="Чт"><span>Чт</span><b>22</b></button>
-          <button class="day" type="button" data-day="Пт"><span>Пт</span><b>23</b></button>
-          <button class="day" type="button" data-day="Сб"><span>Сб</span><b>24</b></button>
-          <button class="day" type="button" data-day="Вс"><span>Вс</span><b>25</b></button>
-        </nav>
-
-        <section class="content-grid">
-          <div class="plan">
-            <div class="section-title">
-              <div><h2>План на сегодня</h2><p>Среда, 21 августа</p></div>
-              <button class="link-button" type="button" id="reset-plan">Сбросить отметки</button>
-            </div>
-
-            <article class="meal-card meal-card--done">
-              <label class="meal-check"><input type="checkbox" checked /><span></span></label>
-              <div class="meal-emoji meal-emoji--yellow">🥞</div>
-              <div class="meal-info"><span class="meal-type">08:00 · ЗАВТРАК</span><h3>Сырники с ягодами</h3><p>Творог, рисовая мука, голубика и греческий йогурт</p><div class="nutrients"><span>420 ккал</span><span>Б 28 г</span><span>Ж 16 г</span><span>У 42 г</span></div></div>
-              <button class="more" type="button" aria-label="Подробнее">›</button>
-            </article>
-
-            <article class="meal-card meal-card--done">
-              <label class="meal-check"><input type="checkbox" checked /><span></span></label>
-              <div class="meal-emoji meal-emoji--green">🥗</div>
-              <div class="meal-info"><span class="meal-type">12:30 · ОБЕД</span><h3>Боул с курицей и киноа</h3><p>Куриное филе, киноа, авокадо и свежие овощи</p><div class="nutrients"><span>560 ккал</span><span>Б 42 г</span><span>Ж 21 г</span><span>У 48 г</span></div></div>
-              <button class="more" type="button" aria-label="Подробнее">›</button>
-            </article>
-
-            <article class="meal-card meal-card--done">
-              <label class="meal-check"><input type="checkbox" checked /><span></span></label>
-              <div class="meal-emoji meal-emoji--pink">🍓</div>
-              <div class="meal-info"><span class="meal-type">16:00 · ПЕРЕКУС</span><h3>Йогурт с клубникой</h3><p>Натуральный йогурт, клубника и миндальные лепестки</p><div class="nutrients"><span>230 ккал</span><span>Б 12 г</span><span>Ж 8 г</span><span>У 27 г</span></div></div>
-              <button class="more" type="button" aria-label="Подробнее">›</button>
-            </article>
-
-            <article class="meal-card">
-              <label class="meal-check"><input type="checkbox" /><span></span></label>
-              <div class="meal-emoji meal-emoji--blue">🐟</div>
-              <div class="meal-info"><span class="meal-type">19:00 · УЖИН</span><h3>Лосось с овощами</h3><p>Филе лосося, брокколи, цукини и лимонный соус</p><div class="nutrients"><span>490 ккал</span><span>Б 38 г</span><span>Ж 25 г</span><span>У 24 г</span></div></div>
-              <button class="more" type="button" aria-label="Подробнее">›</button>
-            </article>
-          </div>
-
-          <aside class="sidebar">
-            <section class="summary-card">
-              <div class="summary-card__head"><h2>Дневная норма</h2><span>75%</span></div>
-              <div class="calories"><strong id="calories-value">1 210</strong><span>из 1 700 ккал</span></div>
-              <div class="bar"><i id="calories-bar"></i></div>
-              <div class="macro-grid"><div><i class="dot dot--purple"></i><span>Белки</span><strong>82 / 120 г</strong></div><div><i class="dot dot--orange"></i><span>Жиры</span><strong>45 / 65 г</strong></div><div><i class="dot dot--blue"></i><span>Углеводы</span><strong>117 / 190 г</strong></div></div>
-            </section>
-            <section class="water-card">
-              <div><span class="water-icon">💧</span><div><h2>Водный баланс</h2><p><strong id="water-value">5</strong> из 8 стаканов</p></div></div>
-              <div class="water-glasses" aria-label="Отмечено пять из восьми стаканов">
-                <button class="glass filled" type="button" aria-label="Стакан 1"></button><button class="glass filled" type="button" aria-label="Стакан 2"></button><button class="glass filled" type="button" aria-label="Стакан 3"></button><button class="glass filled" type="button" aria-label="Стакан 4"></button><button class="glass filled" type="button" aria-label="Стакан 5"></button><button class="glass" type="button" aria-label="Стакан 6"></button><button class="glass" type="button" aria-label="Стакан 7"></button><button class="glass" type="button" aria-label="Стакан 8"></button>
-              </div>
-            </section>
-            <section class="tip-card"><span>💡</span><div><b>Совет дня</b><p>Выпей стакан воды за 20 минут до еды — это поможет улучшить пищеварение.</p></div></section>
-          </aside>
-        </section>
-      </main>
-      <footer>С заботой о твоём здоровье <span>♥</span></footer>
-    </div>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="НЕмарафон «Ешь. Худей. Люби.» — план питания Юлии Шамко">
+  <title>НЕмарафон · Юлия Шамко</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="portrait" role="img" aria-label="Юлия Шамко"><span>ЮШ</span></div>
+    <div class="hero-copy"><p class="eyebrow">НЕМАРАФОН</p><h1>«Ешь.<br>Худей.<br>Люби.»</h1><p>Юлия Шамко · нутрициолог<br>@shamkoyulya</p></div>
+  </header>
+  <section class="progress" aria-label="Прогресс программы"><div><span>Прогресс</span><span id="progress-label">0 из 60 приёмов пищи</span></div><div class="track"><i id="progress-fill"></i></div></section>
+  <nav class="tabs" aria-label="Разделы программы">
+    <button class="tab active rules-tab" data-view="rules">📋 Правила</button>
+    <button class="tab" data-view="week-1">Неделя 1</button><button class="tab" data-view="week-2">Неделя 2</button><button class="tab" data-view="week-3">Неделя 3</button>
+    <button class="tab vitamins-tab" data-view="vitamins">💊 Витамины</button>
+  </nav>
+  <main id="content"></main>
+  <footer>НЕмарафон «Ешь. Худей. Люби.» · @shamkoyulya</footer>
+  <div class="celebration" id="celebration" role="dialog" aria-modal="true" aria-labelledby="celebration-title"><div><span>🎉</span><h2 id="celebration-title">Вы сделали это!</h2><p>20 дней позади. Здоровое питание — это не марафон, а образ жизни.</p><b>— Юлия Шамко · @shamkoyulya</b><button id="close-celebration">Спасибо! 🌿</button></div></div>
+  <script src="script.js"></script>
+</body>
 </html>
