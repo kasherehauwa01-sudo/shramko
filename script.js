@@ -30,6 +30,7 @@ const rules = [
   ['🌙 Отбой до 23:00','Сон — часть протокола восстановления.'],
   ['🏃 Двигайтесь каждый день','Зарядка, тренировка или больше шагов — обязательная часть протокола.']
 ];
+const ruleColors = ['#6b8cae','#e8a735','#c9714a','#7a9e7e','#6b8cae','#e8a735','#c9714a','#7a9e7e'];
 const vitamins = [
   ['Витаминный комплекс «Ритмы здоровья»','🌅 Утренняя + вечерняя капсула','Две формулы поддерживают энергию днём и восполняют минералы вечером.','https://ru.siberianhealth.com/ru/shop/catalog/product/500048/?referral=2687535825'],
   ['Витамин D3 MAX','☀️ 6 капель во время завтрака','Витамин D₃ на основе МСТ-масла для удобного усвоения.','https://ru.siberianhealth.com/ru/shop/catalog/product/501644/?referral=2687535825'],
@@ -46,7 +47,10 @@ function header(icon, title, subtitle, color = '') {
 }
 
 function renderRules() {
-  content.innerHTML = `${header('📋','Основные правила','8 принципов НЕмарафона','#c9714a')}<div class="banner"><strong>🌟 Прежде чем начать</strong>Соблюдайте эти правила каждый день наравне с меню — тогда система сработает по-настоящему.</div>${rules.map(rule => `<article class="info-card rule"><h3>${rule[0]}</h3><p>${rule[1]}</p></article>`).join('')}`;
+  content.innerHTML = `${header('📋','Основные правила','7 принципов НЕмарафона','#c9714a')}<div class="banner"><strong>🌟 Прежде чем начать</strong>Это база, на которой держится всё. Соблюдайте эти правила каждый день наравне с меню — тогда система сработает по-настоящему.</div>${rules.map((rule,index) => {
+    const [icon, ...title] = rule[0].split(' ');
+    return `<article class="rule-card"><div class="rule-head"><span class="rule-icon">${icon}</span><strong class="rule-title" style="background:${ruleColors[index]}">${title.join(' ')}</strong></div><p>${rule[1]}</p></article>`;
+  }).join('')}`;
 }
 
 function renderWeek(week) {
@@ -85,7 +89,12 @@ content.addEventListener('click', event => {
   const head=event.target.closest('.day-head'); if(head){head.closest('.day').classList.toggle('open');return;}
   const button=event.target.closest('.meal button'); if(!button)return;
   const meal=button.closest('.meal'); checked.has(meal.dataset.key)?checked.delete(meal.dataset.key):checked.add(meal.dataset.key);
-  const view=document.querySelector('.tab.active').dataset.view; updateProgress(); show(view);
+  const done=checked.has(meal.dataset.key);
+  meal.classList.toggle('checked',done);
+  button.textContent=done?'✓ Съедено':'○ Отметить съеденным';
+  const day=meal.closest('.day');
+  day.classList.toggle('done',[...day.querySelectorAll('.meal')].every(item=>checked.has(item.dataset.key)));
+  updateProgress();
   if(checked.size===60) document.querySelector('#celebration').classList.add('show');
 });
 document.querySelector('#close-celebration').addEventListener('click',()=>document.querySelector('#celebration').classList.remove('show'));
