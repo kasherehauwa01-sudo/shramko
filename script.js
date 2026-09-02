@@ -20,6 +20,29 @@ const meals = [
   ['Авокадо, яйцо и сыр на тосте','Фунчоза с фаршем','Фунчоза с овощным салатом'],
   ['Овсяная каша на воде с ягодами','Куриные сердечки с булгуром','Сердечки с овощным салатом']
 ];
+const mealPhotos = {
+  '1-0':'d1-breakfast-egg-roll.jpg',
+  '1-1':'d1-lunch-chicken-bulgur.jpg',
+  '1-2':'d1-dinner-fish-foil.jpg',
+  '2-1':'d2-lunch-turkey-cutlets.jpg',
+  '2-2':'d2-dinner-liver-apple-salad.jpg',
+  '3-0':'d3-breakfast-shakshuka.jpg',
+  '4-0':'d4-breakfast-oatmeal-tomato.jpg',
+  '7-0':'d7-lunch-fish-cakes.jpg',
+  '7-1':'d7-dinner-chicken-rice.jpg',
+  '7-2':'d7-dinner-chicken-salad.jpg',
+  '9-1':'d9-lunch-pasta-salad.jpg',
+  '9-2':'d9-dinner-chicken-egg-salad.jpg',
+  '11-0':'d11-breakfast-mushroom-omelet.jpg',
+  '12-0':'d12-breakfast-liver-pate-toast.jpg',
+  '13-0':'d13-breakfast-egg-wrap.jpg',
+  '13-1':'d13-side-pea-salad.jpg',
+  '17-0':'d17-breakfast-avocado-toast.jpg',
+  '17-1':'d17-lunch-curry-bulgur.jpg',
+  '17-2':'d17-dinner-liver-pancakes.jpg',
+  '19-0':'d19-breakfast-avocado-cheese.jpg',
+  '19-1':'d19-lunch-funchoza.jpg'
+};
 const weekOneDetails = [
   [
     {name:'Яичный ролл с зеленью и сыром',steps:['Взбейте 2 яйца с молоком и щепоткой соли','Вылейте на сковороду, посыпьте зеленью и 30 г тёртого сыра','Сверните в рулет, 1 минуту под крышкой. Подавайте со свежим огурцом']},
@@ -168,10 +191,12 @@ function renderWeek(week) {
       const key = `${day}-${type}`;
       const done = checked.has(key);
       const details = week === 1 ? weekOneDetails[index][type] : week === 2 ? weekTwoDetails[index][type] : weekThreeDetails[index][type];
+      const photo = mealPhotos[key];
+      const photoMarkup = photo ? `<img class="meal-photo" src="shramko-photos/${photo}" alt="" width="400" height="400" loading="lazy">` : '';
       const steps = details ? `<ul class="meal-steps">${details.steps.map(step=>`<li>${step}</li>`).join('')}</ul>` : '';
       const products = details?.products || (details?.product ? [details.product] : []);
       const productTags = products.length ? `<div class="products">${products.map(product=>`<span class="product">+ ${product}</span>`).join('')}</div>` : '';
-      return `<div class="meal${done?' checked':''}" data-key="${key}"><span class="type" style="color:${['#e8a735','#7a9e7e','#c9714a'][type]}">${['ЗАВТРАК','ОБЕД','УЖИН'][type]}</span><h3>${details?.name || name}</h3>${steps}${productTags}<button type="button">${done?'✓ Съедено':'○ Отметить съеденным'}</button></div>`;
+      return `<div class="meal${photo?' has-photo':''}${done?' checked':''}" data-key="${key}">${photoMarkup}<div class="meal-content"><span class="type" style="color:${['#e8a735','#7a9e7e','#c9714a'][type]}">${['ЗАВТРАК','ОБЕД','УЖИН'][type]}</span><h3>${details?.name || name}</h3>${steps}${productTags}<button type="button">${done?'✓ Съедено':'○ Отметить съеденным'}</button></div></div>`;
     }).join('');
     const complete = dayMeals.every((_,type) => checked.has(`${day}-${type}`));
     const extra = day === 14 ? '<aside class="extra"><strong>🥒 Приготовьте на завтра малосольные огурцы</strong><p>Огурцы 700 г · соль 1 ст. л. · сахар 1 ч. л. · укроп 1 пучок · чеснок 6–7 зубчиков · хлопья чили по желанию</p><p>Нарезаем, складываем в контейнер или пакет, перемешиваем и убираем в холодильник минимум на 1 час.<br><em>Быстрые, хрустящие, малосольные огурчики готовы!</em></p></aside>' : '';

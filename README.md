@@ -14,7 +14,7 @@ python3 -m http.server 8080
 
 1. Откройте файловый менеджер панели Timeweb.
 2. Перейдите в корневую папку сайта `kvasmix.ru` (обычно `public_html`).
-3. Загрузите в неё `index.html`, `styles.css` и `script.js`.
+3. Загрузите в неё `index.html`, `styles.css`, `script.js`, `yulia.jpeg` и папку `shramko-photos`.
 4. Если в папке уже есть старый `index.html`, предварительно сохраните его резервную копию.
 
 Сборка не требуется: сайт состоит из обычных HTML, CSS и JavaScript-файлов.
