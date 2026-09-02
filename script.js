@@ -43,6 +43,17 @@ const mealPhotos = {
   '19-0':'d19-breakfast-avocado-cheese.jpg',
   '19-1':'d19-lunch-funchoza.jpg'
 };
+const productLinks = {
+  'Арахисовая паста':'https://www.wildberries.ru/catalog/895528632/detail.aspx',
+  'Идеи белкового завтрака':'https://ru.pinterest.com/pin/820218150932570219/',
+  'Купить готовые':'https://xn----7sbhfgrdpmlfdj4bcqm7f.xn--p1ai/everyday/tproduct/690362239-854948566341-perets-farshirovannii-indeika',
+  'Птитим':'https://www.wildberries.ru/catalog/178284349/detail.aspx',
+  'Рецепт грузинского салата':'https://ru.pinterest.com/pin/592716000999876403/',
+  'Соевый соус':'https://ozon.ru/t/GchHqr3',
+  'Томаты пассата':'https://www.wildberries.ru/catalog/90952865/detail.aspx',
+  'Топлёное масло':'https://www.wildberries.ru/catalog/61073258/detail.aspx',
+  'Уксус':'https://www.wildberries.ru/catalog/166553130/detail.aspx'
+};
 const weekOneDetails = [
   [
     {name:'Яичный ролл с зеленью и сыром',steps:['Взбейте 2 яйца с молоком и щепоткой соли','Вылейте на сковороду, посыпьте зеленью и 30 г тёртого сыра','Сверните в рулет, 1 минуту под крышкой. Подавайте со свежим огурцом']},
@@ -195,7 +206,7 @@ function renderWeek(week) {
       const photoMarkup = photo ? `<img class="meal-photo" src="shramko-photos/${photo}" alt="" width="400" height="400" loading="lazy">` : '';
       const steps = details ? `<ul class="meal-steps">${details.steps.map(step=>`<li>${step}</li>`).join('')}</ul>` : '';
       const products = details?.products || (details?.product ? [details.product] : []);
-      const productTags = products.length ? `<div class="products">${products.map(product=>`<span class="product">+ ${product}</span>`).join('')}</div>` : '';
+      const productTags = products.length ? `<div class="products">${products.map(product=>`<a class="product" href="${productLinks[product]}" target="_blank" rel="noopener noreferrer">+ ${product}</a>`).join('')}</div>` : '';
       return `<div class="meal${photo?' has-photo':''}${done?' checked':''}" data-key="${key}">${photoMarkup}<div class="meal-content"><span class="type" style="color:${['#e8a735','#7a9e7e','#c9714a'][type]}">${['ЗАВТРАК','ОБЕД','УЖИН'][type]}</span><h3>${details?.name || name}</h3>${steps}${productTags}<button type="button">${done?'✓ Съедено':'○ Отметить съеденным'}</button></div></div>`;
     }).join('');
     const complete = dayMeals.every((_,type) => checked.has(`${day}-${type}`));
