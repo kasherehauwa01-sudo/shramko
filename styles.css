@@ -3,3 +3,4 @@
 .meal.has-photo{display:grid;grid-template-columns:100px minmax(0,1fr);padding:0}.meal-photo{display:block;width:100px;height:100px;object-fit:cover}.meal.has-photo .meal-content{min-width:0;padding:12px 14px}
 .vitamin{padding:0}.vitamin-photo{display:flex;align-items:center;justify-content:center;height:150px;background:#f5f0eb}.vitamin-photo img{display:block;width:auto;height:auto;max-width:55%;max-height:126px;object-fit:contain}.vitamin-body{padding:16px}
 .product{text-decoration:none;transition:border-color .2s,background .2s,color .2s}.product:hover,.product:focus-visible{border-color:var(--green);background:#edf6ee;color:#496e5c;outline:none}
+.registration-banner p{margin:0 0 8px}.registration-banner p:last-child{margin-bottom:0}.registration-banner a{color:#496e5c;font-weight:700;text-underline-offset:2px}
