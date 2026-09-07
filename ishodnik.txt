@@ -8,7 +8,7 @@
 <meta name="hosting-provider" content="Netlify">
 <meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=aebe7f87-f242-4cba-bd5c-34b077df11ed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>НЕмарафон · Юлия Шамко</title>
+<title>Рацион · Юлия Шамко</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -112,7 +112,7 @@ footer{text-align:center;padding:20px;color:#BBB;font-size:11px}
     <img src="yulia.jpeg" alt="Юлия Шамко">
   </div>
   <div class="hero-text">
-    <div class="he">НЕМАРАФОН</div>
+    <div class="he">РАЦИОН</div>
     <div class="ht">«Ешь.<br>Худей.<br>Люби.»</div>
     <div class="ha">Юлия Шамко · нутрициолог<br>@shamkoyulya</div>
   </div>
@@ -349,7 +349,7 @@ footer{text-align:center;padding:20px;color:#BBB;font-size:11px}
 
 <!-- RULES -->
 <div class="ws w5 act" id="w5"><div class="main">
-<div class="wh"><div class="wb" style="background:#C9714A">📋</div><div><div class="wti">Основные правила</div><div class="wsu">7 принципов НЕмарафона</div></div></div>
+<div class="wh"><div class="wb" style="background:#C9714A">📋</div><div><div class="wti">Основные правила</div><div class="wsu">7 принципов Рациона</div></div></div>
 
 <div class="rules-banner">
   <strong>🌟 Прежде чем начать</strong>
@@ -373,7 +373,7 @@ footer{text-align:center;padding:20px;color:#BBB;font-size:11px}
 <div class="rule-block"><div class="rule-head"><div class="rule-icon">🏃</div><div class="rule-badge" style="background:#7A9E7E">Двигайтесь каждый день</div></div><div class="rule-desc">Зарядка, тренировка или просто больше шагов. Активность — не бонус, а часть протокола.</div></div>
 
 </div></div>
-<footer>НЕмарафон «Ешь. Худей. Люби.» · @shamkoyulya</footer>
+<footer>Рацион «Ешь. Худей. Люби.» · @shamkoyulya</footer>
 
 <div id="celebration"><div class="cbox"><span class="cemoji">🎉</span><div class="ctitle">Вы сделали это!</div><div class="ctext">20 дней позади. Вы заботились о себе и доказали — здоровое питание это не марафон, а образ жизни.</div><div class="cauth">— Юлия Шамко · @shamkoyulya</div><button class="cbtn" onclick="document.getElementById('celebration').classList.remove('show')">Спасибо! 🌿</button></div></div>
 

@@ -187,7 +187,7 @@ function header(icon, title, subtitle, color = '') {
 }
 
 function renderRules() {
-  content.innerHTML = `${header('📋','Основные правила','7 принципов НЕмарафона','#c9714a')}<div class="banner"><strong>🌟 Прежде чем начать</strong>Это база, на которой держится всё. Соблюдайте эти правила каждый день наравне с меню — тогда система сработает по-настоящему.</div>${rules.map((rule,index) => {
+  content.innerHTML = `${header('📋','Основные правила','7 принципов Рациона','#c9714a')}<div class="banner"><strong>🌟 Прежде чем начать</strong>Это база, на которой держится всё. Соблюдайте эти правила каждый день наравне с меню — тогда система сработает по-настоящему.</div>${rules.map((rule,index) => {
     const [icon, ...title] = rule[0].split(' ');
     return `<article class="rule-card"><div class="rule-head"><span class="rule-icon">${icon}</span><strong class="rule-title" style="background:${ruleColors[index]}">${title.join(' ')}</strong></div><p>${rule[1]}</p></article>`;
   }).join('')}`;
@@ -216,7 +216,7 @@ function renderWeek(week) {
 }
 
 function renderVitamins() {
-  content.innerHTML = `${header('💊','Витамины и добавки','Рекомендации Юлии Шамко','#6b8cae')}<div class="banner" style="border-color:#6b8cae;background:#eef3f8"><strong>Зачем это нужно?</strong>Правильно подобранные витамины — это не просто «для здоровья». Это топливо для энергии, сна и восстановления. Каждый из этих продуктов выбран под конкретную задачу.</div>${vitamins.map((item,index)=>`<article class="info-card vitamin"><div class="vitamin-photo"><img src="shramko-photos/vitamins/${item[4]}" alt="${item[0]}" width="260" height="260" loading="lazy"></div><div class="vitamin-body"><h3><small>${index+1}.</small> ${item[0]}</h3><span class="dose">${item[1]}</span><p>${item[2]}</p><a href="${item[3]}" target="_blank" rel="noopener noreferrer">＋ Купить</a></div></article>`).join('')}`;
+  content.innerHTML = `${header('💊','Витамины и добавки','Рекомендации Юлии Шамко','#6b8cae')}<div class="banner registration-banner" style="border-color:#6b8cae;background:#eef3f8"><strong>Зачем это нужно?</strong><p>Правильно подобранные витамины — это не просто «для здоровья». Это топливо для энергии, сна и восстановления. Каждый из этих продуктов выбран под конкретную задачу.</p><p>Для приобретения данных нутрицевтиков вам нужно зарегистрироваться по моей ссылке. Обратите внимание, чтобы я была указана консультантом. Становитесь Привилегированным клиентом Siberian Wellness и экономьте на покупках! <a href="https://ru.siberianhealth.com/ru/shop/user/registration/PRIVILEGED_CLIENT/?referral=2687535825" target="_blank" rel="noopener noreferrer">Зарегистрироваться</a>.</p></div>${vitamins.map((item,index)=>`<article class="info-card vitamin"><div class="vitamin-photo"><img src="shramko-photos/vitamins/${item[4]}" alt="${item[0]}" width="260" height="260" loading="lazy"></div><div class="vitamin-body"><h3><small>${index+1}.</small> ${item[0]}</h3><span class="dose">${item[1]}</span><p>${item[2]}</p><a href="${item[3]}" target="_blank" rel="noopener noreferrer">＋ Купить</a></div></article>`).join('')}`;
 }
 
 function updateProgress() {
